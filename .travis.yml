@@ -7,4 +7,7 @@ node_js:
 install:
   - npm install -g jest
 script:
-  - jest
+  - jest --coverage
+after_success:
+  - npm install codecov
+  - codecov
