@@ -20,4 +20,4 @@ const maxchar = (str) => {
     return mostCommonCharacter;
 }
 
-module.exports = maxchar;
+const exports = maxchar;
