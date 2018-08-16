@@ -12,3 +12,6 @@ demonstrating problem solving skill
 <code>npm install -g jest</code>
 ### Run tests
 <code>jest</code>
+
+## Finish addressing a problem
+<code>npm run finish [problem name]</code>
