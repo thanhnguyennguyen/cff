@@ -15,4 +15,4 @@ Given an integer, return an integer that is the reverse order of numbers
     - No: Sign = 1
 - Reverse string
 - Parse to integer again
-- Multiple with Sign
+- Multiply with Sign
