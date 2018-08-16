@@ -8,4 +8,12 @@ const palindrome = (str) => {
     return (reversed === str);
 }
 
-module.exports = palindrome;
+// solution2 
+const palindrome2 = (str) => {
+    return str.split('').every((char, index) => {
+        return char === str[str.length - 1 -index];
+    });
+}
+
+
+module.exports = {palindrome, palindrome2};
