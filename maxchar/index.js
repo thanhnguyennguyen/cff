@@ -4,20 +4,22 @@ const maxchar = (str) => {
     var characterMap = {},
     mostCommonCharacter = '';
     for (character of str) {
-        characterMap[character] = characterMap[character] + 1 || 1;
+        if (characterMap[character]) {
+            characterMap[character] += 1;
 
-        // if this is first character, assume this is the mostCommonCharacter
-        if (!mostCommonCharacter) {
-            mostCommonCharacter = character;
-            continue;
-        }
-
-        // store the mostCommonCharacter
-        mostCommonCharacter = (characterMap[character] > characterMap[mostCommonCharacter])
+            // store the mostCommonCharacter
+            mostCommonCharacter = (characterMap[character] > characterMap[mostCommonCharacter])
             ? character
             : mostCommonCharacter;
+        } else {
+            characterMap[character] = 1;
+            // if this is first character, assume this is the mostCommonCharacter
+            if (!mostCommonCharacter) {
+                mostCommonCharacter = character;
+            }
+        }
     }
     return mostCommonCharacter;
 }
 
-const exports = maxchar;
+module.exports = maxchar;
