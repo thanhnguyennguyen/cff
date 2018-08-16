@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "solve-problem": "init.sh "
   },
   "repository": {
     "type": "git",
