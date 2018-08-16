@@ -4,6 +4,9 @@
 
 demonstrating problem solving skill
 
+## Start solving a new problem
+<code>npm run solve-problem [problem name]</code>
+
 ## Testing: Please never write code without tests
 ### Install Jest
 <code>npm install -g jest</code>
