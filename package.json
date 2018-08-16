@@ -11,7 +11,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "solve-problem": "init.sh "
+    "solve-problem": "init.sh ",
+    "finish": "finish.sh "
   },
   "repository": {
     "type": "git",
