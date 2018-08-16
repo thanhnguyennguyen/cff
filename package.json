@@ -1,0 +1,31 @@
+{
+  "name": "hacker",
+  "version": "1.0.0",
+  "description": "The code interview bootcamp: Algorithms + Datastructures",
+  "main": "no",
+  "jest": {
+    "collectCoverageFrom": [
+      "*index.js"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhnguyennguyen/hacker.git"
+  },
+  "keywords": [
+    "code",
+    "interview",
+    "nguyennguyen",
+    "hacker"
+  ],
+  "author": "NguyenNguyen (nguyenbk92@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhnguyennguyen/hacker/issues"
+  },
+  "homepage": "https://github.com/thanhnguyennguyen/hacker#readme"
+}

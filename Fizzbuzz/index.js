@@ -12,7 +12,4 @@ let buzz = num => {
     }
     return '';
 }
-let check100FirstNumber = () => {
-    for (let i = 0; i < 100; i++) console.log(i + ': ' + fizz(i) + '' + buzz(i));
-}
 module.exports = {fizz, buzz, fizzString, buzzString};
