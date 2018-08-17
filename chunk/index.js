@@ -2,7 +2,7 @@
 const chunk = (arr, size) => {
     // put your code here to address problems
     let result = [];
-    if (size < 1) return [arr];
+    if (size < 1 || size > arr.length) return [arr];
 
     while(arr.length) {
         result.push(arr.slice(0, size));
@@ -15,7 +15,7 @@ const chunk = (arr, size) => {
 const chunk2 = (arr, size) => {
     // put your code here to address problems
     let result = [];
-    if (size < 1) return [arr];
+    if (size < 1 || size > arr.length) return [arr];
 
     let currentChunk = [];
     for (element of arr) {
