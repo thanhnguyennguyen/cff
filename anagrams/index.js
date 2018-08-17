@@ -11,6 +11,11 @@ const buildCharacterMap = (str) => {
 const anagrams = (strA, strB) => {
     // put your code here to address problems
 
+    
+    // lowercase and remove special character
+    strA = strA.toLowerCase().replace(/[^a-z]/g, "");
+    strB = strB.toLowerCase().replace(/[^a-z]/g, "");
+
     // check length first to avoid wasting time
     if (strA.length !== strB.length) {
         return false;
