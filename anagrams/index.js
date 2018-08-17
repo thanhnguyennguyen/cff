@@ -15,6 +15,9 @@ const anagrams = (strA, strB) => {
     if (strA.length !== strB.length) {
         return false;
     }
+    // lowercase
+    strA = strA.toLowerCase();
+    strB = strB.toLowerCase();
     let characterMapA = characterMapB = {};
     // init character map for strA
     characterMapA = buildCharacterMap(strA);
