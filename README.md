@@ -11,7 +11,8 @@ demonstrating problem solving skill
 ### Install Jest
 <code>npm install -g jest</code>
 ### Run tests
-<code>jest</code>
+- Run test only <code>jest</code> or <code>npm test</code>
+- Run test with coverage <code>jest --coverage</code> or <code>npm run coverage</code>
 
 ## Finish addressing a problem
 <code>npm run finish [problem name]</code>
