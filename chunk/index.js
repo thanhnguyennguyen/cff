@@ -1,12 +1,12 @@
 
 const chunk = (arr, size) => {
     // put your code here to address problems
-    let result = [];
+    let result = [], index = 0;
     if (size < 1 || size > arr.length) return [arr];
 
-    while(arr.length) {
-        result.push(arr.slice(0, size));
-        arr = arr.slice(size);
+    while(index < arr.length) {
+        result.push(arr.slice(index, index + size));
+        index += size;
     }
     return result;
 }
