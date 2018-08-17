@@ -1,6 +1,10 @@
 
+const preProcess = (str) => {
+    return str.toLowerCase().replace(/[^\w]/g, "");
+}
+
 const buildCharacterMap = (str) => {
-    let characterMap = [];
+    let characterMap = {};
     for (let character of str) {
         characterMap[character] = ++characterMap[character] || 1;
     }
@@ -13,8 +17,8 @@ const anagrams = (strA, strB) => {
 
     
     // lowercase and remove special character
-    strA = strA.toLowerCase().replace(/[^a-z]/g, "");
-    strB = strB.toLowerCase().replace(/[^a-z]/g, "");
+    strA = preProcess(strA)
+    strB = preProcess(strB);
 
     // check length first to avoid wasting time
     if (strA.length !== strB.length) {
@@ -27,10 +31,16 @@ const anagrams = (strA, strB) => {
     characterMapB = buildCharacterMap(strB);
     
     // compare 2 objects
-    let result = true;
-    return characterMapA.every(function(value, index, ) {
-        return value === characterMapB[index]
-    });
+    for (let char in characterMapA) {
+        if (characterMapA[char] !== characterMapB[char]) {
+            return false;
+        }
+    }
+    return (characterMapA.length === characterMapB.length);
 }
 
-module.exports = anagrams;
+const anagrams2 = (strA, strB) => {
+    return (preProcess(strA).split('').sort().join('') === preProcess(strB).split('').sort().join(''))
+}
+
+module.exports = {anagrams, anagrams2};
