@@ -4,4 +4,4 @@ if [[ $# -eq 0 ]] ; then
     exit 1
 fi
 mkdir $1;
-cp template/* $1
+cp template/* topics/$1
