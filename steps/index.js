@@ -32,7 +32,7 @@ const step2Recursion = num => {
 
     // recursive case
     let result = steps2(num - 1);
-    result.push(getStepOutput(num, num));
+    result.push(new Array(num + 1).join('#'));
     return result;
 }
 const steps2 = num => step2Recursion(num).map(element => element + new Array(num - element.length + 1).join(' '));
