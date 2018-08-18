@@ -16,3 +16,13 @@ demonstrating problem solving skill
 
 ## Finish addressing a problem
 <code>npm run finish [problem name]</code>
+
+## Structure
+In topics folder, there are many sub folder. Each is a problem.
+- index.js: contain main logics
+- README.md
+    - description of problem
+    - Solutions
+- script.js: invoke main logic function in index.js and console.log to see how it works by your eyes
+- test.js: unit tests
+
