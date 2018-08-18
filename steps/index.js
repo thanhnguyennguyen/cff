@@ -19,4 +19,22 @@ const steps = (num) => {
     return result;
 }
 
-module.exports = steps;
+const step2Recursion = num => {
+    // invalid case
+    if (num < 1) {
+        return [];
+    }
+
+    // // base case
+    if (num === 1) {
+        return [getStepOutput(num, num)];
+    }
+
+    // recursive case
+    let result = steps2(num - 1);
+    result.push(getStepOutput(num, num));
+    return result;
+}
+const steps2 = num => step2Recursion(num).map(element => element + new Array(num - element.length + 1).join(' '));
+
+module.exports = {steps, steps2};

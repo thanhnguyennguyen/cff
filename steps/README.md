@@ -25,3 +25,12 @@ step has spaces on the right hand side!
         - print out each step
             - Initialize a string (contain spaced only) with length = num
             - at step i, we replace first i characters with #
+### Solution 2: recursive version
+    - Base cases:
+        - num < 1, return [] 
+        - steps(1) return ['#']
+    - Recursive cases:
+        - result = step(num - 1)
+        - append with string contain n character #
+    Now, we miss some spaces at the end, so let's append some spaces
+    
