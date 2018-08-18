@@ -37,4 +37,14 @@ const step2Recursion = num => {
 }
 const steps2 = num => step2Recursion(num).map(element => element + new Array(num - element.length + 1).join(' '));
 
-module.exports = {steps, steps2};
+const steps3 = num => {
+    let result = [];
+    for (let row = 0; row < num; row++) {
+        let str = '';
+        for (let column = 0; column < num; column++) str += (column <= row) ? '#' : ' ';
+        result.push(str);
+    }
+    return result;
+}
+
+module.exports = {steps, steps2, steps3};
