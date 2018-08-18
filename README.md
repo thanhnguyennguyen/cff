@@ -18,7 +18,7 @@ demonstrating problem solving skill
 <code>npm run finish [problem name]</code>
 
 ## Structure
-In topics folder, there are many sub folder. Each is a problem.
+In topics folder, there are many sub folders. Each tries to solve a problem.
 - index.js: contain main logics
 - README.md
     - description of problem
