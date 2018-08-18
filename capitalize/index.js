@@ -9,4 +9,16 @@ const capitalize = (str) => {
     return result.join(' ');
 }
 
-module.exports = capitalize;
+const capitalize2 = (str) => {
+    // put your code here to address problems
+    let result = '',
+        capitalization = true;
+    for (let char of str) {
+        result += capitalization ? char.toLocaleUpperCase() : char;
+        capitalization = (char === ' ');
+    }
+    return result;
+}
+
+
+module.exports = {capitalize, capitalize2};

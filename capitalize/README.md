@@ -9,8 +9,13 @@ return the capitalized string.
     - capitalize('a lazy fox') --> 'A Lazy Fox'
     - capitalize('look, it is working!') --> 'Look, It Is Working!'
 # Put your solutions here
-### Solution1
+### Solution 1
     - Split into multiple words
     - Uppercase the first character of each words
     - Join them into one string again
-    
+
+### Solution 2: foreach character and try to capitalize the character after a space
+    - Initialize capitalization flag = true
+    - Foreach character of string
+        - if capitalizarion = true, then capitalize that character and append to result string
+        - if current character is a space, assign capitalization = true, else capitalization = false
