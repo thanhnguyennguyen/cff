@@ -42,3 +42,10 @@ step has spaces on the right hand side!
     #   #   #   #
     - all elements matrix[row][column] with column <= row are #
     - all elements matrix[row][column] with column > row are spaces (_)
+### Solution 4: combination of Solution 1 and 3
+    Each string should have 2parts: firstPart contain # only, secondPart contain space only
+    - Loop all row
+        - firstPart = row times of #
+        - secondPart = (num - row) times of space
+        - concat firstPart and secondPart
+        

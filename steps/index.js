@@ -47,4 +47,15 @@ const steps3 = num => {
     return result;
 }
 
-module.exports = {steps, steps2, steps3};
+const steps4 = num => {
+    let result = [];
+    for (let row = 0; row < num; row++) result.push(
+        new Array(row + 1 + 1).join('#') + new Array(num - row).join(' ')
+    );
+    // row + 1: re-index row from 1 to num
+    // plus more 1 because we use 'join', if we want to join 2 characters, we need 1 join-character(#)
+    // thus, to have (row + 1) # characters, we need to join an array that have (row +2) empty items
+    // similar for space, we should have [num - (row + 1) + 1] = (row -num) spaces
+    return result;
+}
+module.exports = {steps, steps2, steps3, steps4};
