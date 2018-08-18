@@ -13,4 +13,4 @@ used in a string.  Vowels are the characters 'a', 'e'
     - Check original length of string
     - Replace all vowels by empty string, check new length
     - result = original length - new length
-    
+### Solution 2: iteration, just loop and count
