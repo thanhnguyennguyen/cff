@@ -36,12 +36,9 @@ step has spaces on the right hand side!
 
 ### Solution 3: using a matrix
     Take a glance at a matrix (_ indicate a space)
-    <code>
     #   _   _   _
     #   #   _   _
     #   #   #   _
     #   #   #   #
-    </code>
     - all elements matrix[row][column] with column <= row are #
     - all elements matrix[row][column] with column > row are spaces (_)
-    

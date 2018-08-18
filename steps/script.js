@@ -11,7 +11,7 @@ for (let i = 0; i < num; i++) {
     console.log(steps2(num)[i]);
 }
 
-console.log('Solution 4 (matrix):');
+console.log('Solution 3 (matrix):');
 for (let i = 0; i < num; i++) {
     console.log(steps3(num)[i]);
 }
