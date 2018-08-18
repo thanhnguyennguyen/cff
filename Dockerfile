@@ -14,6 +14,7 @@ COPY template /app/template/
 COPY init.sh /app/
 COPY finish.sh /app/
 COPY jest.config.js /app/
+COPY package.json /app
 COPY README.md /app/
 
 RUN npm install -g npm@6.4.0
