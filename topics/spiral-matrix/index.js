@@ -1,19 +1,4 @@
-const goLeft = (num, val = 1, col = 0, row = 0, result = [[]]) => {
-    return spiral(num, val + 1, col - 1, row, true, result);
-}
-
-const goRight = (num, val = 1, col = 0, row = 0, result = [[]]) => {
-    return spiral(num, val + 1, col + 1, row, true, result);
-}
-
-const goDown = (num, val = 1, col = 0, row = 0, result = [[]]) => {
-    return spiral(num, val + 1, col, row + 1, false, result);
-}
-
-const goUp = (num, val = 1, col = 0, row = 0, result = [[]]) => {
-    return spiral(num, val + 1, col, row - 1, false, result);
-}
-
+    
 const visitedPosition = (col, row, result) => {
     return (result[row] !== undefined && result[row][(col)] !== undefined);
 }
@@ -29,31 +14,35 @@ const spiral = (num, val = 1, col = 0, row = 0, horizontal = true, result = [[]]
     }
     if (horizontal) {
         if ((col + 1) < num &&  !visitedPosition(col + 1, row, result)) {
-            return goRight(num, val, col, row, result);
+            // go right
+            return spiral(num, val + 1, col + 1, row, true, result);
         }
         if ((col - 1) >= 0 &&  !visitedPosition(col - 1, row, result)) {
-            return goLeft(num, val, col, row, result);
+            // go left
+            return spiral(num, val + 1, col - 1, row, true, result);
         }
         if ((row + 1) < num &&  !visitedPosition(col, row + 1, result)) {
-            return goDown(num, val, col, row, result);
+            // go down
+            return spiral(num, val + 1, col, row + 1, false, result);
         }
-        if ((row - 1) >= 0 &&  !visitedPosition(col, row - 1, result)) {
-            return goUp(num, val, col, row, result);
-        }
+        // go up
+        return spiral(num, val + 1, col, row - 1, false, result);
+
     } else {
         if ((row + 1) < num &&  !visitedPosition(col, row + 1, result)) {
-            return goDown(num, val, col, row, result);
+            // go down
+            return spiral(num, val + 1, col, row + 1, false, result);
         }
         if ((row - 1) >= 0 &&  !visitedPosition(col, row - 1, result)) {
-            return goUp(num, val, col, row, result);
+            // go up
+            return spiral(num, val + 1, col, row - 1, false, result);
         }
         if ((col + 1) < num &&  !visitedPosition(col + 1, row, result)) {
-            return goRight(num, val, col, row, result);
+            // go right
+            return spiral(num, val + 1, col + 1, row, true, result);
         }
-        if ((col - 1) >= 0 &&  !visitedPosition(col - 1, row, result)) {
-            return goLeft(num, val, col, row, result);
-        }
-
+        // go left
+        return spiral(num, val + 1, col - 1, row, true, result);
     }
     
 }

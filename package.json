@@ -5,8 +5,9 @@
   "main": "no",
   "jest": {
     "collectCoverageFrom": [
-      "*index.js"
-    ]
+      "topics/*"
+    ],
+    "testPathIgnorePatterns": ["template/*"]
   },
   "scripts": {
     "test": "jest",
