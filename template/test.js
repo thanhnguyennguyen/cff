@@ -1,4 +1,5 @@
 const funcName = require('./index.js');
 // put your tests here
-test('test', () => {
+test('template test', () => {
+    expect(funcName()).toEqual();
 });
