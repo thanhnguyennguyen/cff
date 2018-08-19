@@ -4,6 +4,6 @@ if [[ $# -eq 0 ]] ; then
     exit 1
 fi
 git checkout -b $1
-git add $1
+git add topics/$1
 git commit -m "$1"
 git push origin $1
