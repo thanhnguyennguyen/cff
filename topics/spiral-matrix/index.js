@@ -8,7 +8,6 @@ const goRight = (num, val = 1, col = 0, row = 0, result = [[]]) => {
 
 const goDown = (num, val = 1, col = 0, row = 0, result = [[]]) => {
     return spiral(num, val + 1, col, row + 1, false, result);
-     ;
 }
 
 const goUp = (num, val = 1, col = 0, row = 0, result = [[]]) => {
@@ -59,5 +58,32 @@ const spiral = (num, val = 1, col = 0, row = 0, horizontal = true, result = [[]]
     
 }
 
+const spiral2 = num => {
+    let result = [],
+        startCol = 0,
+        endCol = num - 1,
+        startRow = 0,
+        endRow = num - 1,
+        counter = 1;
+    if (num < 1) return [[]];
+  
+    for(let i = 0; i < num; i++)result.push([]);
 
-module.exports = spiral;
+    while(startCol <= endCol && startRow <= endRow) {
+        // go right
+        for (let i = startCol; i <= endCol; i++) result[startRow][i] = counter++;
+        startRow++;
+        //go down
+        for (let i = startRow; i <= endRow; i++) result[i][endCol] = counter++;
+        endCol--;
+        //go left
+        for (let i = endCol; i >= startCol; i--) result[endRow][i] = counter++;
+        endRow--;
+        // go up
+        for (let i = endRow; i >= startRow; i--) result[i][startCol] = counter++;
+        startCol++;
+    }
+    return result;
+}
+
+module.exports = {spiral, spiral2};
