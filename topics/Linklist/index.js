@@ -16,21 +16,21 @@ class Linklist {
      * constructor
      * @param Node node optional
      */
-    constructor(node = null) {
-        this.head = node;
-        this.size = node ? 1 : 0;
+    constructor() {
+        this.head = null;
+        this.size = 0;
     }
     /**
      * return the head element of link list
-     * @return Node|null
+     * @return data|null
      */
     getHead() {
-        return this.head;
+        return (this.head) ? this.head.data : null;
     }
 
     /**
      * return the tail element of link list
-     * @return Node|null
+     * @return data|null
      */
     getTail() {
         if (!this.head) {
@@ -38,13 +38,13 @@ class Linklist {
         }
         let walker = this.head;
         while(walker.next) walker = walker.next;
-        return walker;
+        return walker.data;
     }
 
     /**
      * return the element at index of link list
      * @param integer index
-     * @return Node|null
+     * @return data|null
      */
     getElementAt(index) {
         if (!this.head || index >= this.size) {
@@ -56,7 +56,7 @@ class Linklist {
             walker = walker.next;
             i++;
         }
-        return walker;
+        return walker.data;
     }
 
     /**
@@ -77,11 +77,11 @@ class Linklist {
 
     /**
      * insert a node to link list at head, return true if success
-     * @param Node node
+     * @param data 
      * @return boolean
      */
-    insertAtHead(node) {
-        node.next = this.head;
+    insertAtHead(data) {
+        let node = new Node(data, this.head);
         this.head = node;
         this.size++;
         return true;
@@ -89,19 +89,18 @@ class Linklist {
 
     /**
      * insert a node to link list at tail, return true if success
-     * @param Node node
+     * @param data
      * @return boolean
      */
-    insertAtTail(node) {
+    insertAtTail(data) {
         if (!this.head) {
-            this.head = node;
+            this.head = new Node(data);
             this.size++;
             return true;
         }
         let walker = this.head;
         while(walker.next) walker = walker.next;
-        node.next = walker.next;
-        walker.next = node;
+        walker.next = new Node(data, walker.next);
         this.size++;
         return true;
     }
@@ -109,16 +108,16 @@ class Linklist {
     /**
      * insert a node to link list at head, return true if success
      * @param integer index
-     * @param  Node node
+     * @param  data 
      * @return boolean
      */
-    insertAt(index, node) {
+    insertAt(index, data) {
         if (index > this.size) {
             return false;
         }
         // insert at head
         if (!this.head) {
-            return this.insertAtHead(node);
+            return this.insertAtHead(data);
         }
         let walker = this.head,
             i = 0;
@@ -126,20 +125,18 @@ class Linklist {
             walker = walker.next;
             i++;
         }
-        node.next = walker.next;
-        walker.next = node;
+        walker.next = new Node(data, walker.next);
         this.size++;
         return true;
     }
 
     /**
      * remove head element of link list
-     * @return Node|undefine
+     * @return data|null
      */
     removeAtHead() {
         if (this.size) {
-            let result = new Node();
-            result.data = this.head.data;
+            let result = this.head.data;
             this.head = this.head.next;
             this.size--;
             return result;
@@ -149,21 +146,21 @@ class Linklist {
 
     /**
      * remove tail element of link list
-     * @return Node|undefine
+     * @return data|null
      */
     removeAtTail() {
         if (!this.head) {
             return null;
         }
         if (this.size === 1) {
-            let result = new Node(this.head.data);
+            let result = this.head.data;
             this.head = null;
             this.size--;
             return result;
         }
         let walker = this.head;
         while(walker.next.next) walker = walker.next;
-        let result = new Node(walker.next.data);
+        let result = walker.next.data;
         walker.next = null;
         this.size--;
         return result;
@@ -172,7 +169,7 @@ class Linklist {
     /**
      * remove  element at index of link list
      * @param integer index
-     * @return Node|undefine
+     * @return data
      */
     removeAt(index) {
         if (index >= this.size) {
@@ -191,7 +188,7 @@ class Linklist {
             walker = walker.next;
             i++;
         }
-        let result = new Node(walker.next.data);
+        let result = walker.next.data;
         walker.next = walker.next.next;
         this.size--;
         return result;
