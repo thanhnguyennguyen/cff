@@ -97,9 +97,8 @@ class Linklist {
             this.size++;
             return true;
         }
-        let walker = this.head;
-        while(walker.next) walker = walker.next;
-        walker.next = new Node(data, walker.next);
+        let last = this.getTail();
+        last.next = new Node(data);
         this.size++;
         return true;
     }
