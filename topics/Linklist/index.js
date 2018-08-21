@@ -175,14 +175,9 @@ class Linklist {
         if (index === (this.size - 1)) {
             return this.removeAtTail();
         }
-        let walker = this.head,
-            i = 0;
-        while(i < index - 1 && walker.next) {
-            walker = walker.next;
-            i++;
-        }
-        let result = walker.next.data;
-        walker.next = walker.next.next;
+        let previous = this.getElementAt(index - 1),
+            result = previous.next.data;
+        previous.next = previous.next.next;
         this.size--;
         return result;
     }
