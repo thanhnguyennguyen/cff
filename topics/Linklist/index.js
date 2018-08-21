@@ -47,7 +47,7 @@ class Linklist {
      * @return Node|null
      */
     getElementAt(index) {
-        if (!this.head || index >= this.size) {
+        if (!this.head || index >= this.size || index < 0) {
             return null;
         }
         let walker = this.head,
@@ -97,9 +97,8 @@ class Linklist {
             this.size++;
             return true;
         }
-        let walker = this.head;
-        while(walker.next) walker = walker.next;
-        walker.next = new Node(data, walker.next);
+        let last = this.getTail();
+        last.next = new Node(data);
         this.size++;
         return true;
     }
@@ -111,20 +110,15 @@ class Linklist {
      * @return boolean
      */
     insertAt(index, data) {
-        if (index > this.size) {
+        if (index > this.size || index < 0) {
             return false;
         }
         // insert at head
         if (!this.head) {
             return this.insertAtHead(data);
         }
-        let walker = this.head,
-            i = 0;
-        while(i < index - 1 && walker.next) {
-            walker = walker.next;
-            i++;
-        }
-        walker.next = new Node(data, walker.next);
+        let previous = this.getElementAt(index - 1);
+        previous.next = new Node(data, previous.next);
         this.size++;
         return true;
     }
@@ -181,14 +175,9 @@ class Linklist {
         if (index === (this.size - 1)) {
             return this.removeAtTail();
         }
-        let walker = this.head,
-            i = 0;
-        while(i < index - 1 && walker.next) {
-            walker = walker.next;
-            i++;
-        }
-        let result = walker.next.data;
-        walker.next = walker.next.next;
+        let previous = this.getElementAt(index - 1),
+            result = previous.next.data;
+        previous.next = previous.next.next;
         this.size--;
         return result;
     }
