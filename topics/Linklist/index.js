@@ -110,7 +110,7 @@ class Linklist {
      * @return boolean
      */
     insertAt(index, data) {
-        if (index > this.size) {
+        if (index > this.size || index < 0) {
             return false;
         }
         // insert at head
