@@ -48,7 +48,7 @@ describe('Linklist: test insert at head', ()   =>  {
     let linklist = new Linklist();
     test('test insert at head: empty link list', () => {
         linklist.insertAtHead(1);
-        expect(linklist.getHead()).toEqual(1);
+        expect(linklist.getHead().data).toEqual(1);
         expect(linklist.getSize()).toEqual(1);
     });
 
@@ -56,7 +56,7 @@ describe('Linklist: test insert at head', ()   =>  {
     test('test insert at head: not empty link list', () => {
         linklist1.insertAtHead(1);
         linklist1.insertAtHead(2);
-        expect(linklist1.getHead()).toEqual(2);
+        expect(linklist1.getHead().data).toEqual(2);
         expect(linklist1.getSize()).toEqual(2);
     });
 });
@@ -71,7 +71,7 @@ describe('Linklist: test remove at head', ()   =>  {
     test('test remove at head: not empty link list', () => {
         expect(linklist.removeAtHead()).toEqual(3);
         expect(linklist.removeAtHead()).toEqual(2);
-        expect(linklist.getHead()).toEqual(1);
+        expect(linklist.getHead().data).toEqual(1);
         expect(linklist.getSize()).toEqual(1);
         expect(linklist.removeAtHead()).toEqual(1);
         expect(linklist.getHead()).toEqual(null);
@@ -93,7 +93,7 @@ describe('Linklist: test insert at tail', ()   =>  {
     linklist1 = new Linklist();
     linklist.insertAtTail(1);
     test('test insert at tail: empty link list', () => {
-        expect(linklist.getHead()).toEqual(1);
+        expect(linklist.getHead().data).toEqual(1);
         expect(linklist.getSize()).toEqual(1);
     });
 
@@ -101,7 +101,7 @@ describe('Linklist: test insert at tail', ()   =>  {
     linklist1.insertAtTail(2);
     linklist1.insertAtTail(3);
     test('test insert at tail: not empty link list', () => {
-        expect(linklist1.getHead()).toEqual(1);
+        expect(linklist1.getHead().data).toEqual(1);
         expect(linklist1.getSize()).toEqual(3);
     });
 });
@@ -117,7 +117,7 @@ describe('Linklist: test remove at tail', ()   =>  {
         expect(linklist.removeAtTail()).toEqual(1);
         expect(linklist.getSize()).toEqual(2);
         expect(linklist.removeAtTail()).toEqual(2);
-        expect(linklist.getHead()).toEqual(3);
+        expect(linklist.getHead().data).toEqual(3);
         expect(linklist.getSize()).toEqual(1);
         expect(linklist.removeAtTail()).toEqual(3);
         expect(linklist.getHead()).toEqual(null);
@@ -141,14 +141,14 @@ describe('Linklist: test insert at a particular position', ()   =>  {
 
     test('test insert at position 0 (head)', () => {
         expect(linklist1.insertAt(0, 1)).toEqual(true);
-        expect(linklist1.getHead()).toEqual(1);
+        expect(linklist1.getHead().data).toEqual(1);
         expect(linklist1.getSize()).toEqual(1);
     });
 
     test('test insert at invalid position', () => {
         expect(linklist2.insertAt(0, 1)).toEqual(true);
         expect(linklist2.insertAt(3, 2)).toEqual(false);
-        expect(linklist2.getHead()).toEqual(1);
+        expect(linklist2.getHead().data).toEqual(1);
         expect(linklist2.getSize()).toEqual(1);
     });
 
@@ -158,7 +158,7 @@ describe('Linklist: test insert at a particular position', ()   =>  {
         expect(linklist2.insertAt(3, 2)).toEqual(false);
         expect(linklist3.insertAt(1, 2)).toEqual(true)
         expect(linklist3.insertAt(2, 3)).toEqual(true);
-        expect(linklist3.getHead()).toEqual(1);
+        expect(linklist3.getHead().data).toEqual(1);
         expect(linklist3.getSize()).toEqual(3);
     });
 });
@@ -221,7 +221,7 @@ describe('Linklist: test getHead', ()   =>  {
     linklist.insertAtHead(3);
 
     test('not empty list', () => {
-        expect(linklist.getHead()).toEqual(3);
+        expect(linklist.getHead().data).toEqual(3);
     });
 });
 
@@ -239,7 +239,7 @@ describe('Linklist: test getTail', ()   =>  {
     linklist.insertAtHead(3);
 
     test('not empty list', () => {
-        expect(linklist.getTail()).toEqual(1);
+        expect(linklist.getTail().data).toEqual(1);
     });
 });
 
@@ -260,7 +260,7 @@ describe('Linklist: test getElementAt', ()   =>  {
     });
     
     test('valid index', () => {
-        expect(linklist.getElementAt(1)).toEqual(2);
+        expect(linklist.getElementAt(1).data).toEqual(2);
     });
 });
 

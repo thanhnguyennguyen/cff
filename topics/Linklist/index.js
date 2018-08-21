@@ -22,15 +22,15 @@ class Linklist {
     }
     /**
      * return the head element of link list
-     * @return data|null
+     * @return Node|null
      */
     getHead() {
-        return (this.head) ? this.head.data : null;
+        return this.head;
     }
 
     /**
      * return the tail element of link list
-     * @return data|null
+     * @return Node|null
      */
     getTail() {
         if (!this.head) {
@@ -38,13 +38,13 @@ class Linklist {
         }
         let walker = this.head;
         while(walker.next) walker = walker.next;
-        return walker.data;
+        return walker;
     }
 
     /**
      * return the element at index of link list
      * @param integer index
-     * @return data|null
+     * @return Node|null
      */
     getElementAt(index) {
         if (!this.head || index >= this.size) {
@@ -56,7 +56,7 @@ class Linklist {
             walker = walker.next;
             i++;
         }
-        return walker.data;
+        return walker;
     }
 
     /**
