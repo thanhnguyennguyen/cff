@@ -47,7 +47,7 @@ class Linklist {
      * @return Node|null
      */
     getElementAt(index) {
-        if (!this.head || index >= this.size) {
+        if (!this.head || index >= this.size || index < 0) {
             return null;
         }
         let walker = this.head,
