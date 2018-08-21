@@ -81,8 +81,7 @@ class Linklist {
      * @return boolean
      */
     insertAtHead(data) {
-        let node = new Node(data, this.head);
-        this.head = node;
+        this.head = new Node(data, this.head);
         this.size++;
         return true;
     }
