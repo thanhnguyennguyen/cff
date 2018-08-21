@@ -8,7 +8,6 @@ const buildCharacterMap = (str) => {
     for (let character of str) {
         characterMap[character] = ++characterMap[character] || 1;
     }
-    console.log(characterMap);
     return characterMap;
 }
 
