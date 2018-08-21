@@ -19,5 +19,11 @@ is circular, false if it is not.
   - Then checking tail.next
     - If tail.next is NULL: not circular
     - Else: circular
-    
+### Solution 2
+Using 2 walkers
+  - The first walker goes one by one
+  - The second walker goes two nodes in each step
+  - If walker1 === walker2 -> circular
+  - If walker2 === NULL -> not circular
+
 

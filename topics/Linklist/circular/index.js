@@ -1,7 +1,7 @@
 const {Linklist, Node} = require('../index.js');
 // put your code here
 
-const isCircular = (list) => {
+const isCircular1 = (list) => {
     if (!list.head) {
         return false;
     }
@@ -9,5 +9,19 @@ const isCircular = (list) => {
     return (tail.next !== null);
 }
 
-module.exports = isCircular;
+const isCircular2 = (list) => {
+    if (!list.head) {
+        return false;
+    }
+    let walker1 = walker2 = list.head;
+    while(walker2 && walker2.next) {
+        walker1 = walker1.next;
+        walker2 = walker2.next.next;
+        if (walker1 === walker2) {
+            return true;
+        }
+    }
+    return false;
+}
+module.exports = {isCircular1, isCircular2};
 
