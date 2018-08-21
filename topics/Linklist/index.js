@@ -1,8 +1,11 @@
 class Node {
     // put your code here to implement a link list node
-    constructor(data, node) {
+
+     // in Javascript, null means this variable has not been set
+     // null means this variable has been set to value null
+    constructor(data, next = null) {
         this.data = data;
-        this.next = node;
+        this.next = next;
     }
 }
 
@@ -13,13 +16,13 @@ class Linklist {
      * constructor
      * @param Node node optional
      */
-    constructor(node) {
+    constructor(node = null) {
         this.head = node;
         this.size = node ? 1 : 0;
     }
     /**
      * return the head element of link list
-     * @return Node|undefined
+     * @return Node|null
      */
     getHead() {
         return this.head;
@@ -27,11 +30,11 @@ class Linklist {
 
     /**
      * return the tail element of link list
-     * @return Node|undefined
+     * @return Node|null
      */
     getTail() {
         if (!this.head) {
-            return undefined;
+            return null;
         }
         let walker = this.head;
         while(walker.next) walker = walker.next;
@@ -41,11 +44,11 @@ class Linklist {
     /**
      * return the element at index of link list
      * @param integer index
-     * @return Node|undefined
+     * @return Node|null
      */
     getElementAt(index) {
         if (!this.head || index >= this.size) {
-            return undefined;
+            return null;
         }
         let walker = this.head,
             i = 0;
@@ -141,7 +144,7 @@ class Linklist {
             this.size--;
             return result;
         }
-        return undefined;
+        return null;
     }
 
     /**
@@ -150,18 +153,18 @@ class Linklist {
      */
     removeAtTail() {
         if (!this.head) {
-            return undefined;
+            return null;
         }
         if (this.size === 1) {
             let result = new Node(this.head.data);
-            this.head = undefined;
+            this.head = null;
             this.size--;
             return result;
         }
         let walker = this.head;
         while(walker.next.next) walker = walker.next;
         let result = new Node(walker.next.data);
-        walker.next = undefined;
+        walker.next = null;
         this.size--;
         return result;
     }
@@ -173,7 +176,7 @@ class Linklist {
      */
     removeAt(index) {
         if (index >= this.size) {
-            return undefined;
+            return null;
         }
         // remove at head
         if (index === 0) {
@@ -216,7 +219,7 @@ class Linklist {
      * clear link list
      */
     clear() {
-        this.head = undefined;
+        this.head = null;
         this.size = 0;
     }
 }

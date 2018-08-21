@@ -10,7 +10,7 @@ describe('Node: Test Node that its next is empty', ()  =>  {
         expect(node.data).toEqual(5);
     }); 
     test('test Node next', () => {
-        expect(node.next).toEqual(undefined);
+        expect(node.next).toEqual(null);
     }); 
 });
 
@@ -37,7 +37,7 @@ describe('Linklist: test constructor with no argument', ()   =>  {
     }); 
 
     test('test Linklist head', () => {
-        expect(linklist.getHead()).toEqual(undefined);
+        expect(linklist.getHead()).toEqual(null);
     });
     test('test Linklist size', () => {
         expect(linklist.getSize()).toEqual(0);
@@ -96,15 +96,15 @@ describe('Linklist: test remove at head', ()   =>  {
         expect(linklist.getHead().data).toEqual(node1.data);
         expect(linklist.getSize()).toEqual(1);
         expect(linklist.removeAtHead().data).toEqual(node1.data);
-        expect(linklist.getHead()).toEqual(undefined);
+        expect(linklist.getHead()).toEqual(null);
         expect(linklist.getSize()).toEqual(0);
     });
 
     // create an empty link list
     let emptyLinklist = new Linklist();
     test('test remove at head: empty link list', () => {
-        expect(emptyLinklist.removeAtHead()).toEqual(undefined);
-        expect(emptyLinklist.getHead()).toEqual(undefined);
+        expect(emptyLinklist.removeAtHead()).toEqual(null);
+        expect(emptyLinklist.getHead()).toEqual(null);
         expect(emptyLinklist.getSize()).toEqual(0);
     });
 });
@@ -148,15 +148,15 @@ describe('Linklist: test remove at tail', ()   =>  {
         expect(linklist.getHead().data).toEqual(node3.data);
         expect(linklist.getSize()).toEqual(1);
         expect(linklist.removeAtTail().data).toEqual(node3.data);
-        expect(linklist.getHead()).toEqual(undefined);
+        expect(linklist.getHead()).toEqual(null);
         expect(linklist.getSize()).toEqual(0);
     });
 
     // create an empty link list
     let emptyLinklist = new Linklist();
     test('test remove at tail: empty link list', () => {
-        expect(emptyLinklist.removeAtTail()).toEqual(undefined);
-        expect(emptyLinklist.getHead()).toEqual(undefined);
+        expect(emptyLinklist.removeAtTail()).toEqual(null);
+        expect(emptyLinklist.getHead()).toEqual(null);
         expect(emptyLinklist.getSize()).toEqual(0);
     });
 });
@@ -238,7 +238,7 @@ describe('Linklist: test remove at a particular position', ()   =>  {
     linklist4.insertAtHead(node2);
     linklist4.insertAtHead(node3);
     test('remove at head', () => {
-        expect(linklist4.removeAt(10)).toEqual(undefined);
+        expect(linklist4.removeAt(10)).toEqual(null);
         expect(linklist4.getSize()).toEqual(3);
     });
 });
@@ -251,7 +251,7 @@ describe('Linklist: test getHead', ()   =>  {
     emptylist = new Linklist()
 
     test('empty list', () => {
-        expect(emptylist.getHead()).toEqual(undefined);
+        expect(emptylist.getHead()).toEqual(null);
     });
 
     linklist.insertAtHead(node1);
@@ -272,7 +272,7 @@ describe('Linklist: test getTail', ()   =>  {
     emptylist = new Linklist();
 
     test('empty list', () => {
-        expect(emptylist.getTail()).toEqual(undefined);
+        expect(emptylist.getTail()).toEqual(null);
     });
 
     linklist.insertAtHead(node1);
@@ -292,7 +292,7 @@ describe('Linklist: test getElementAt', ()   =>  {
     emptylist = new Linklist();
 
     test('empty list', () => {
-        expect(emptylist.getElementAt(0)).toEqual(undefined);
+        expect(emptylist.getElementAt(0)).toEqual(null);
     });
 
     linklist.insertAtHead(node1);
@@ -300,7 +300,7 @@ describe('Linklist: test getElementAt', ()   =>  {
     linklist.insertAtHead(node3);
 
     test('invalid index', () => {
-        expect(linklist.getElementAt(5)).toEqual(undefined);
+        expect(linklist.getElementAt(5)).toEqual(null);
     });
     
     test('valid index', () => {
