@@ -117,13 +117,8 @@ class Linklist {
         if (!this.head) {
             return this.insertAtHead(data);
         }
-        let walker = this.head,
-            i = 0;
-        while(i < index - 1 && walker.next) {
-            walker = walker.next;
-            i++;
-        }
-        walker.next = new Node(data, walker.next);
+        let previous = this.getElementAt(index - 1);
+        previous.next = new Node(data, previous.next);
         this.size++;
         return true;
     }
