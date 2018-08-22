@@ -2,7 +2,7 @@ const levelWidth = require('./index.js');
 const {Node, } = require('../index.js');
 // put your tests here
 test('Tree: LevelWidth test', () => {
-    node = new Node(1);
+    let node = new Node(1);
     node.add(2);
         // node 2 has 2 children: 4, 5
         node.children[0].add(4);
