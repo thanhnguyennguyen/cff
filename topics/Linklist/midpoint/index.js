@@ -1,6 +1,4 @@
 const midpoint = (list) => {
-    // put your code here
-
     if (typeof list !== 'object') {
         return null;
     }
@@ -21,5 +19,4 @@ const midpoint = (list) => {
     }
     return walker1;
 }
-
 module.exports = midpoint;
