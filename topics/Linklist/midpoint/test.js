@@ -2,10 +2,6 @@ const midpoint = require('./index.js');
 const {Linklist, Node} = require('../index.js');
 // put your tests here]
 
-test('test invalid input', () => {
-    expect(midpoint('abc')).toEqual(null);
-});
-
 test('test empty list', () => {
     expect(midpoint(new Linklist())).toEqual(null);
 });

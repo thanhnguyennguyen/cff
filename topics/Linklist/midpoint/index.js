@@ -1,8 +1,4 @@
 const midpoint = (list) => {
-    if (typeof list !== 'object') {
-        return null;
-    }
-
     if (!list.head) {
         return null;
     }
