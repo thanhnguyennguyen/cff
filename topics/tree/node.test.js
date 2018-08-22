@@ -49,6 +49,7 @@ describe('Tree node: test remove method', () => {
         let node = new Node(123);
         node.add(456);
         node.add(789);
+
         expect(node.data).toEqual(123);
         node.remove(456);
         expect(node.children[0].data).toEqual(789);
