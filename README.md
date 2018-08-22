@@ -1,4 +1,5 @@
 # hacker
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thanhnguyennguyen/hacker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thanhnguyennguyen/hacker/?branch=master)
 [![Build Status](https://travis-ci.com/thanhnguyennguyen/hacker.svg?branch=master)](https://travis-ci.com/thanhnguyennguyen/hacker)
 [![codecov](https://codecov.io/gh/thanhnguyennguyen/hacker/branch/master/graph/badge.svg)](https://codecov.io/gh/thanhnguyennguyen/hacker)
 
