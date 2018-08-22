@@ -37,7 +37,9 @@ class Linklist {
             return null;
         }
         let walker = this.head;
-        while(walker.next) walker = walker.next;
+        while(walker.next) {
+            walker = walker.next;
+        }
         return walker;
     }
 
@@ -152,7 +154,9 @@ class Linklist {
             return result;
         }
         let walker = this.head;
-        while(walker.next.next) walker = walker.next;
+        while(walker.next.next) {
+            walker = walker.next;
+        }
         let result = walker.next.data;
         walker.next = null;
         this.size--;

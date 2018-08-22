@@ -10,7 +10,8 @@ const midpoint = (list) => {
         return null;
     }
 
-    let walker1 = walker2 = list.head;
+    let walker1  = list.head,
+        walker2 = list.head;
     while(walker2 && walker2.next) {
         if (walker2.next.next) {
             walker1 = walker1.next;

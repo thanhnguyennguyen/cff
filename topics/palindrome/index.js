@@ -4,7 +4,9 @@
 
 const palindrome = (str) => {
     let reversed = '';
-    for (let character of str) reversed = character + reversed; 
+    for (let character of str) {
+        reversed = character + reversed;
+    }  
     return (reversed === str);
 }
 

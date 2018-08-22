@@ -2,9 +2,12 @@
 const pyramid = num => {
     // put your code here to address problems
     let result = [];
-    if (num < 1) return result;
+    if (num < 1) {
+        return result;
+    }
     for (let row = 1; row <= num; row ++) {
-        let firstPart = thirdPart = new Array(num - row + 1).join(' '),
+        let firstPart = new Array(num - row + 1).join(' '),
+            thirdPart = firstPart,
             secondPart = new Array(2*row - 1 + 1).join('#');
         result.push(firstPart + secondPart + thirdPart);
     }
@@ -14,7 +17,9 @@ const pyramid = num => {
 // recursive version
 const pyramid2 = (num, row = 1, result = []) => {
     // put your code here to address problems
-    if (num < 1) return result;
+    if (num < 1){
+        return result;
+    } 
     if (row === num) {
         result.push(new Array(2 * row - 1 + 1).join('#'));
         return result;

@@ -23,7 +23,8 @@ const anagrams = (strA, strB) => {
     if (strA.length !== strB.length) {
         return false;
     }
-    let characterMapA = characterMapB = {};
+    let characterMapA = {},
+        characterMapB = {};
     // init character map for strA
     characterMapA = buildCharacterMap(strA);
     // init character map for strB

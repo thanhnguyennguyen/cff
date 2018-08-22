@@ -3,7 +3,7 @@ const maxchar = (str) => {
     // put your code here to address problems
     var characterMap = {},
     mostCommonCharacter = '';
-    for (character of str) {
+    for (let character of str) {
         if (characterMap[character]) {
             characterMap[character] += 1;
 
