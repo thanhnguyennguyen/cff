@@ -1,5 +1,6 @@
-// put your code here
 const midpoint = (list) => {
+    // put your code here
+
     if (typeof list !== 'object') {
         return null;
     }
