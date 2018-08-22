@@ -1,6 +1,4 @@
-const {Linklist, Node} = require('../index.js');
 // put your code here
-
 const midpoint = (list) => {
     if (typeof list !== 'object') {
         return null;
