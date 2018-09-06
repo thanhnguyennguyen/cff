@@ -34,7 +34,7 @@ describe('test processData', () => {
         ];
     
         let processedData = {
-            0987000001 : [
+            '0987000001' : [
                 {
                     activatation: '2016-01-01',
                     deactivatation: ''
@@ -64,7 +64,7 @@ describe('test processData', () => {
         ];
     
         let processedData = {
-            0987000001:  [
+            '0987000001':  [
                 {
                     activatation: '2016-01-01',
                     deactivatation: '2016-03-01'
@@ -74,7 +74,7 @@ describe('test processData', () => {
                     deactivatation: '2016-05-01'
                 }
             ],
-            0987000002: [
+            '0987000002': [
                 {
                     activatation: '2016-02-01',
                     deactivatation: '2016-03-01'
@@ -105,7 +105,7 @@ describe('test processData', () => {
         ];
     
         let processedData = {
-            0987000001: [
+            '0987000001': [
                 {
                     activatation: '2016-01-01',
                     deactivatation: '2016-03-01'
@@ -115,7 +115,7 @@ describe('test processData', () => {
                     deactivatation: '2016-05-01'
                 }
             ],
-            0987000002:  [
+            '0987000002':  [
                 {
                     activatation: '2016-02-01',
                     deactivatation: '2016-03-01'
@@ -145,30 +145,24 @@ describe('test processData', () => {
             }
         ];
     
-        let processedData = [
-            {
-                number: '0987000001',
-                history: [
-                    {
-                        activatation: '2016-01-01',
-                        deactivatation: '2016-03-01'
-                    },
-                    {
-                        activatation: '2016-03-01',
-                        deactivatation: ''
-                    }
-                ]
-            },
-            {
-                number: '0987000002',
-                history: [
-                    {
-                        activatation: '2016-02-01',
-                        deactivatation: ''
-                    }
-                ]
-            }
-        ];
+        let processedData = {
+            '0987000001': [
+                {
+                    activatation: '2016-01-01',
+                    deactivatation: '2016-03-01'
+                },
+                {
+                    activatation: '2016-03-01',
+                    deactivatation: ''
+                }
+            ],
+            '0987000002': [
+                {
+                    activatation: '2016-02-01',
+                    deactivatation: ''
+                }
+            ]
+        };
         expect(JSON.stringify(processData(rawData))).toEqual(JSON.stringify(processedData));
     });
 });
