@@ -7,7 +7,9 @@
     "collectCoverageFrom": [
       "topics/*"
     ],
-    "testPathIgnorePatterns": ["template/*"]
+    "testPathIgnorePatterns": [
+      "template/*"
+    ]
   },
   "scripts": {
     "test": "jest",
@@ -30,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/thanhnguyennguyen/hacker/issues"
   },
-  "homepage": "https://github.com/thanhnguyennguyen/hacker#readme"
+  "homepage": "https://github.com/thanhnguyennguyen/hacker#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.8"
+  }
 }
