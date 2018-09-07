@@ -6,7 +6,8 @@ RUN  apk add --update \
     git \
     bash \
     make \
-    g++
+    g++ \
+    mongodb
 
 # Copy the current directory contents into the container at /app
 COPY topics /app/topics/
