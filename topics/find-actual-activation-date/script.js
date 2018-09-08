@@ -39,27 +39,30 @@ const insertDataToDb = (dbo) => {
     chunkData = [];  
 }
 
-const importData = (dbo) => {
+const importData = async (db, dbo, process) => {
   // import CSV data to mongodb by chunk, each chunk 1000 records
   let csvStream = csv()
-    .on("data", function(data){
+    .on("data", data => {
       if (validateData(data)) {
         chunkData.push({ phone: data[0], activation: data[1], deactivation: data[2] });
         if (chunkData.length >= chunk) {
-          insertDataToDb();
+          insertDataToDb(dbo);
         }
       }
     })
-    .on("end", function(){
-        closeDbConnection(db);
-         console.log("done");
+    .on("end", async() => {
+        // import the last chunk
+        if (chunkData.length > 0) {
+          insertDataToDb(dbo);
+        }
+        console.log("Import: DONE");
+        console.log("Processing...");
+        await process(db, dbo);
+        console.log("Completed!")
     });
   stream.pipe(csvStream);
 
-  // import the last chunk
-  if (chunkData.length > 0) {
-    insertDataToDb();
-  }
+  
 }
 
 const openWriteStream = (outputPath) => {
@@ -79,39 +82,54 @@ const closeWriteStream = (stream) => {
 const exportOutput = (data, stream) => {
   stream.write(data);
 }
+
+
+const process = async(db, dbo) => {
+  // get phonenumber list
+  let phones;
+  phones = await dbo.collection(transactionCollection).distinct("phone");
+  if (!phones) {
+    return;
+  }
+
+  // open writeStream to export output
+  let writeStream = openWriteStream(outputPath);
+  for (let phone of phones) {
+    let transactions, result;
+    transactions = await dbo.collection(transactionCollection).find({phone: phone}).sort({activation: 1}).toArray();
+    if (!transactions) {
+      return;
+    }
+    result = findActualActivationDate(transactions);
+    exportOutput(result, writeStream);
+  }
+  closeDbConnection(db);
+  closeWriteStream(writeStream);
+}
+
 const main = async () => {
   // setup database connection
-  db = await openDbConnection(url, databaseName);
-  let dbo = db.db(databaseName);
+  try {
+    db = await openDbConnection(url, databaseName);
+    let dbo = db.db(databaseName);
+  
+    // setup db Collection
+    await createCollection(dbo, transactionCollection);
 
-  // setup db Collection
-  await createCollection(dbo, transactionCollection);
+    // clean data
+    // dbo.collection(transactionCollection).drop(function(err, delOK) {
+    //   if (err) throw err;
+    //   if (delOK) console.log("Collection deleted");
+    //   db.close();
+    // });
+    // import data
+    importData(db, dbo, process);
 
-  // import data
-  importData(dbo);
-  let transactions = await dbo.collection(transactionCollection).find().sort({activation: 1}).toArray();
-  console.log(transactions);
-  // // get phonenumber list
-  // let phoneTransactionList = await dbo.collection(transactionCollection).distinct("phone").toArray();
-
-  // if (!phoneTransactionList) {
-  //   return;
-  // }
-
-  // // open writeStream to export output
-  // let writeStream = openWriteStream(outputPath);
-  // phones.forEach(async(phone) => {
-  //   let transactions, result;
-  //   transactions = await dbo.collection(transactionCollection).find({phone: phone}).sort({activation: 1}).toArray();
-  //   if (!transactions) {
-  //     return;
-  //   }
-  //   result = findActualActivationDate(transactions);
-  //   exportOutput(result, writeStream);
-  // });
-  // closeDbConnection(db);
-  // closeWriteStream(writeStream);
+  } catch (error) {
+    console.log(error);
+  }
 }
+
 main();
 
 
