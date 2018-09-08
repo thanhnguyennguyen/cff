@@ -2,15 +2,15 @@ const  {findActualActivationDate, validateData} = require('../index.js');
 // put your tests here
 describe('test findActualActivationDate', () => {
     test('empty data', () => {
-        expect(findActualActivationDate([])).toEqual([]);
+        expect(findActualActivationDate([])).toEqual({});
     });
 
     test('no owner transfer transaction, no renewal transaction', () => {
         let input = [
             {
                 phone: '0987000001',
-                activatation: '2016-01-01',
-                deactivatation: ''
+                activation: '2016-01-01',
+                deactivation: ''
             }
         ];
         let expected = {
@@ -25,13 +25,13 @@ describe('test findActualActivationDate', () => {
         let input = [
             {
                 phone: '0987000001',
-                activatation: '2016-01-01',
-                deactivatation: '2016-03-01'
+                activation: '2016-01-01',
+                deactivation: '2016-03-01'
             },
             {
                 phone: '0987000001',
-                activatation: '2016-03-01',
-                deactivatation: '2016-05-01'
+                activation: '2016-03-01',
+                deactivation: '2016-05-01'
             }
         ];
         let expected = {
@@ -47,13 +47,13 @@ describe('test findActualActivationDate', () => {
         let input = [
             {
                 phone: '0987000001',
-                activatation: '2016-01-01',
-                deactivatation: '2016-03-01'
+                activation: '2016-01-01',
+                deactivation: '2016-03-01'
             },
             {
                 phone: '0987000001',
-                activatation: '2016-04-01',
-                deactivatation: '2016-05-01'
+                activation: '2016-04-01',
+                deactivation: '2016-05-01'
             }
         ];
         let expected = {
@@ -69,18 +69,18 @@ describe('test findActualActivationDate', () => {
         let input = [
             {
                 phone: '0987000001',
-                activatation: '2016-01-01',
-                deactivatation: '2016-03-01'
+                activation: '2016-01-01',
+                deactivation: '2016-03-01'
             },
             {
                 phone: '0987000001',
-                activatation: '2016-03-01',
-                deactivatation: '2016-05-01'
+                activation: '2016-03-01',
+                deactivation: '2016-05-01'
             },
             {
                 phone: '0987000001',
-                activatation: '2016-08-01',
-                deactivatation: '2016-09-01'
+                activation: '2016-08-01',
+                deactivation: '2016-09-01'
             }
         ];
         let expected = {
