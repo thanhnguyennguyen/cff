@@ -1,4 +1,4 @@
-const  {findActualActivationDate, processData, validateData} = require('../index.js');
+const  {findActualActivationDate, validateData} = require('../index.js');
 // put your tests here
 
 describe('test validateData', () => {
