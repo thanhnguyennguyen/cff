@@ -14,8 +14,8 @@ describe('test findActualActivationDate', () => {
             }
         ];
         let expected = {
-                phone: '0987000001',
-                actualActivationDate: '2016-01-01'
+                PHONE_NUMBER: '0987000001',
+                REAL_ACTIVATIONDATE: '2016-01-01'
             };
 
         expect(JSON.stringify(findActualActivationDate(input))).toEqual(JSON.stringify(expected));
@@ -35,8 +35,8 @@ describe('test findActualActivationDate', () => {
             }
         ];
         let expected = {
-                phone: '0987000001',
-                actualActivationDate: '2016-01-01'
+                PHONE_NUMBER: '0987000001',
+                REAL_ACTIVATIONDATE: '2016-01-01'
             };
 
         expect(JSON.stringify(findActualActivationDate(input))).toEqual(JSON.stringify(expected));
@@ -57,8 +57,8 @@ describe('test findActualActivationDate', () => {
             }
         ];
         let expected = {
-            phone: '0987000001',
-            actualActivationDate: '2016-04-01'
+            PHONE_NUMBER: '0987000001',
+            REAL_ACTIVATIONDATE: '2016-04-01'
         };
 
         expect(JSON.stringify(findActualActivationDate(input))).toEqual(JSON.stringify(expected));
@@ -84,8 +84,8 @@ describe('test findActualActivationDate', () => {
             }
         ];
         let expected = {
-            phone: '0987000001',
-            actualActivationDate: '2016-08-01'
+            PHONE_NUMBER: '0987000001',
+            REAL_ACTIVATIONDATE: '2016-08-01'
         };
 
         expect(JSON.stringify(findActualActivationDate(input))).toEqual(JSON.stringify(expected));

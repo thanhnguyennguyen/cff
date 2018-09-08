@@ -12,16 +12,17 @@ const findActualActivationDate = (data) => {
     }
 
     let i = data.length - 1;
-    let result = {phone: data[i].phone, actualActivationDate: data[i].activation};
+    let result = {PHONE_NUMBER: data[i].phone, REAL_ACTIVATIONDATE: data[i].activation};
     while(i > 0) {
         if (new Date(data[i].activation) - new Date(data[i-1].deactivation) >= expiredPeriod) {
-            result.actualActivationDate = data[i].activation;
+    let result = {PHONE_NUMBER: data[i].phone, REAL_ACTIVATIONDATE: data[i].activation};
+            result.REAL_ACTIVATIONDATE = data[i].activation;
             return result;
         }
         i--;
     }
     // actualActivation date is the first activation date
-    result.actualActivationDate = data[i].activation;
+    result.REAL_ACTIVATIONDATE = data[i].activation;
     return result;
 }
 
