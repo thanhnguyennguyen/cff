@@ -27,3 +27,11 @@ RUN sed -i -e 's/\r$//' init.sh
 
 RUN chmod +x finish.sh
 RUN sed -i -e 's/\r$//' finish.sh
+
+# create data folder for mongodb
+cd /
+mkdir data
+cd data
+mkdir db
+# start mongodb
+mongod >/dev/null 2>&1
