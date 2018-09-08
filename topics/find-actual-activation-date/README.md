@@ -2,7 +2,7 @@
 # Put some descriptions here 
 Given a list of at most N = 50,000,000 records (in CSV format), each record describes an usage
 period of a specific mobile phone number.
-Note that one phone number can occur s multiple times in this list, because of 2 reasons:
+Note that one phone number can occur multiple times in this list, because of 2 reasons:
 - This phone number can change from prepaid plan to postpaid plan, or vice versa, at
 anytime just by sending an SMS to the operator.
 - Or, the owner of this phone number can stop using it, and after 1-2 months, it is reused
@@ -41,3 +41,59 @@ with prepaid plan. B used it until 2016-09-01 then changed to postpaid, and fina
 back to prepaid on 2016-12-01 and he's still using it until now. In this case, the actual activation
 date of current owner B of 0987000001 that we want to find is 2016-06-01
 # Put your solutions here
+- Datastructure:
+List of transaction. Each contains: phone number, activation date, deactivation 
+date (can be empty)
+{code}
+        [
+        {
+        Phone: '09800001',
+        activation: '2018-09-01',
+        deactivation: '2018-10-01'
+        },
+        {
+        Phone: '09800001',
+        activation: '2018-10-01',
+        deactivation: '2018-11-01'
+        }
+        ]
+{code}
+-  Validate data and bulk import to database
+-  Aggregate transactions by phone number
+-  Assume that the last activation (in transaction list of each phone number) 
+is the actual activation date
+-  Traverse transaction list (from latest to oldest):
+    - if the deactivation date of the previous transaction is more than 1 
+month older than the activation date of the current one, it means 
+that we have an owner-transfer transaction. So the current one is 
+first transaction of the latest owner, we should reassign the actual 
+activation date by this activation date and stop
+    - Otherwise, this is a renewal or update-plan transaction of the 
+current owner, we need to continue to find the date they register 
+this number
+
+# How to run the program?
+- On your local machine
+    - Prerequisite: nodejs 8, npm, mongodb
+    - Steps:
+        - Git clone this repository git@github.com:thanhnguyennguyen/hacker.git
+        - npm install
+        - Update input data in topics/find-actual-activation-date/data/input.csv
+        - start mongodb service
+        - node topics/find-actual-activation-date/script.js
+        - checkout your output in topics/find-actual-activation-date/data/output.csv
+    - Run unit tests:
+        - npm install -g jest
+        - npm test
+        - Run tests with coverage: npm run coverage
+- Using docker
+    - Prerequisite: install docker
+    - Steps:
+        - pull this github repository git@github.com:thanhnguyennguyen/hacker.git
+        - docker compose up
+        - Update input data in topics/find-actual-activation-date/data/input.csv
+        - node topics/find-actual-activation-date/script.js
+        - checkout your output in topics/find-actual-activation-date/data/output.csv
+    - Run unit tests:
+        - npm test
+        - Run tests with coverage: npm run coverage
