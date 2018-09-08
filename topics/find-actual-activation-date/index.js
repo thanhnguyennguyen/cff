@@ -40,9 +40,9 @@ const validateData = (data) => {
     let deactivation = data[2] || ''; // can be empty
     if (deactivation.length) {
         return numberRegex.test(data[0] || '') && dateRegex.test(activation) && dateRegex.test(deactivation) && (deactivation >= activation);
-    } else {
-        return numberRegex.test(data[0] || '') && dateRegex.test(activation);
     }
+    return numberRegex.test(data[0] || '') && dateRegex.test(activation);
+
 }
 
 module.exports = {findActualActivationDate, validateData};
