@@ -1,15 +1,37 @@
 
-const findActualActivationDate = () => {
+const expiredPeriod = 30 *24 * 60 * 60 * 1000; // 30 days
+/**
+ * 
+ * @param {Array} data
+ * @return {object}
+ */
+const findActualActivationDate = (data) => {
     // put your code here to address problems
+    if (!data || data.length === 0) {
+        return {};
+    }
+
+    let i = data.length - 1;
+    let result = {phone: data[i].phone, actualActivationDate: data[i].activation};
+    while(i > 0) {
+        if (new Date(data[i].activation) - new Date(data[i-1].deactivation) >= expiredPeriod) {
+            result.actualActivationDate = data[i].activation;
+            return result;
+        }
+        i--;
+    }
+    // actualActivation date is the first activation date
+    result.actualActivationDate = data[i].activation;
+    return result;
 }
 
 /**
  * 
- * @param {object} data
+ * @param {Array} data
  * @return {boolean}
  */
 const validateData = (data) => {
-    if (!data) {
+    if (!data || data.length === 0) {
         return false;
     }
     let numberRegex = /^\d+$/;
