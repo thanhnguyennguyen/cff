@@ -84,6 +84,15 @@ this number
         - npm install
         - Update input data in topics/find-actual-activation-date/data/input.csv
         - start mongodb service
+        Note: if you are not using docker, please update line 7 in script.js
+        from 
+        {code}
+        const url = "mongodb://mongo:27017/";
+        {code}
+        to 
+        {code}
+        const url = "mongodb://localhost:27017/";
+        {code}
         - node topics/find-actual-activation-date/script.js
         - checkout your output in topics/find-actual-activation-date/data/output.csv
     - Run unit tests:
