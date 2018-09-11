@@ -2,7 +2,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thanhnguyennguyen/hacker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thanhnguyennguyen/hacker/?branch=master)
 [![Build Status](https://travis-ci.com/thanhnguyennguyen/hacker.svg?branch=master)](https://travis-ci.com/thanhnguyennguyen/hacker)
 [![codecov](https://codecov.io/gh/thanhnguyennguyen/hacker/branch/master/graph/badge.svg)](https://codecov.io/gh/thanhnguyennguyen/hacker)
-
+# [![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/thanhnguyennguyen/hacker/)
 # Put some descriptions here 
 Given a list of at most N = 50,000,000 records (in CSV format), each record describes an usage
 period of a specific mobile phone number.
