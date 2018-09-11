@@ -20,17 +20,19 @@ with the registered plan.
 
 Moreover, the records don't need to follow any specific order of time, and the records of
 the same number don't need to be consecutive​.
-This is an example of the list, given as a CSV file: <br/>
-PHONE_NUMBER,ACTIVATION_DATE,DEACTIVATION_DATE<br/>
-0987000001,2016-03-01,2016-05-01<br/>
-0987000002,2016-02-01,2016-03-01<br/>
-0987000001,2016-01-01,2016-03-01<br/>
-0987000001,2016-12-01,<br/>
-0987000002,2016-03-01,2016-05-01<br/>
-0987000003,2016-01-01,2016-01-10<br/>
-0987000001,2016-09-01,2016-12-01<br/>
-0987000002,2016-05-01,<br/>
-0987000001,2016-06-01,2016-09-01<br/>
+This is an example of the list, given as a CSV file: 
+        
+        PHONE_NUMBER,ACTIVATION_DATE,DEACTIVATION_DATE
+        0987000001,2016-03-01,2016-05-01
+        0987000002,2016-02-01,2016-03-01
+        0987000001,2016-01-01,2016-03-01
+        0987000001,2016-12-01,
+        0987000002,2016-03-01,2016-05-01
+        0987000003,2016-01-01,2016-01-10
+        0987000001,2016-09-01,2016-12-01
+        0987000002,2016-05-01,
+        0987000001,2016-06-01,2016-09-01
+        
 In this list, ACTIVATION_DATE and DEACTIVATION_DATE are represented with
 YYYY-MM-DD format. DEACTIVATION_DATE may be empty, which means that the phone is
 still being used by its current owner.
