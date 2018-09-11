@@ -48,20 +48,21 @@ date of current owner B of 0987000001 that we want to find is 2016-06-01
 - Datastructure:
 List of transaction. Each contains: phone number, activation date, deactivation 
 date (can be empty)
-{code}
+
+
         [
-        {
-        Phone: '09800001',
-        activation: '2018-09-01',
-        deactivation: '2018-10-01'
-        },
-        {
-        Phone: '09800001',
-        activation: '2018-10-01',
-        deactivation: '2018-11-01'
-        }
+                {
+                        Phone: '09800001',
+                        activation: '2018-09-01',
+                        deactivation: '2018-10-01'
+                },
+                {
+                        Phone: '09800001',
+                        activation: '2018-10-01',
+                        deactivation: '2018-11-01'
+                }
         ]
-{code}
+
 -  Validate data and bulk import to database
 -  Aggregate transactions by phone number
 -  Assume that the last activation (in transaction list of each phone number) 
