@@ -19,7 +19,7 @@ COPY README.md /app/
 
 RUN npm install -g npm@6.4.0
 RUN npm install -g jest
-RUN npm run coverage
+RUN npm test
 
 RUN chmod +x init.sh
 RUN sed -i -e 's/\r$//' init.sh
