@@ -9,6 +9,6 @@ find(8) = 3
 find(11) = -1
 # Put your solutions here
 ## Solution
-- Split the list into 2 sublist at midpoint.
+- Split the list into 2 sublists at midpoint.
 - If list is a order list, use binary search to search only one sublist
-- If it is unorder list, binary search on both sublist
+- If it is unorder list, binary search on both sublists
