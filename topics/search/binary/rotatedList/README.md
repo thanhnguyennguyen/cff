@@ -15,5 +15,5 @@ find(11) = -1
 - Binary search on those 2 sorted lists
 ## Solution 2
 - Split the list into 2 sublist at midpoint.
-- Continue binary search on the sublist match: list[start] <= list[search] <= list[end]
-- if both sublists doesn't match the above condition, return -1
+- If list is a order list, use binary search to search only one sublist
+- If it is unorder list, binary search on both sublist
