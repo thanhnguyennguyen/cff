@@ -17,14 +17,13 @@ const find = (list, search, start = 0, end = -1) => {
             return find(list, search, start, mid);
         }
         return find(list, search, mid + 1, end);
-    } else {
-        // un-order sublist
-        let check = find(list, search, start, mid);
-        if (-1 === check) {
-            check = find(list, search, mid + 1, end)
-        }
-        return check;
     }
+    // un-order sublist
+    let check = find(list, search, start, mid);
+    if (-1 === check) {
+        check = find(list, search, mid + 1, end)
+    }
+    return check;
 
 }
 
