@@ -1,6 +1,6 @@
 
-const funcName = () => {
+const find = () => {
     // put your code here to address problems
 }
 
-module.exports = funcName;
+module.exports = find;

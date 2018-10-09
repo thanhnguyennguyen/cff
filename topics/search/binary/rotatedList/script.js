@@ -1,2 +1,2 @@
-const funcName = require('./index.js');
+const find = require('./index.js');
 // put your execution script here
