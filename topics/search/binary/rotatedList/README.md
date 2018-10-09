@@ -8,3 +8,5 @@ find(6) = 1
 find(8) = 3
 find(11) = -1
 # Put your solutions here
+- Find the rotated point
+- Binary search on those 2 sorted lists
