@@ -9,11 +9,11 @@ find(8) = 3
 find(11) = -1
 # Put your solutions here
 ## Solution 1
-- Find the rotated point: in a sorted list, start < mid < end
+- Find the rotated point: in a sorted list, list[start] < list[mid] < list[end]
     - Split the list into 2 sub lists
-    - if any sub list violate this condition:  start < mid < end . That sublist contains rotated point.
+    - if any sub list violate this condition:  list[start] < list[mid] < list[end] . That sublist contains rotated point.
 - Binary search on those 2 sorted lists
 ## Solution 2
 - Split the list into 2 sublist at midpoint.
-- Continue binary search on the sublist match: start <= search <= end
+- Continue binary search on the sublist match: list[start] <= list[search] <= list[end]
 - if both sublists doesn't match the above condition, return -1
