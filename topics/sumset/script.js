@@ -1,2 +1,2 @@
-const sumset = require('./index.js');
+const findOneSubset = require('./index.js');
 // put your execution script here
