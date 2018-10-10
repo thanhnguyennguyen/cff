@@ -6,4 +6,5 @@ test('test sumset', () => {
    expect(findOneSubset(l, 3, 8)).toEqual([1, 2, 5]);
    expect(findOneSubset(l, 3, 9)).toEqual([1, 2, 6]);
    expect(findOneSubset(l, 3, 100)).toEqual([]);
+   expect(findOneSubset(l, 3, 0)).toEqual([]);
 });
