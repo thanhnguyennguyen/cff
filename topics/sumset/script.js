@@ -1,2 +1,2 @@
-const findOneSubset = require('./index.js');
+const {findOneSubset, findAllSubsets} = require('./index.js');
 // put your execution script here
