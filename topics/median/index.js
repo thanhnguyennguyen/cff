@@ -2,8 +2,14 @@
 const median = (sub1, sub2) => {
     // put your code here to address problems
     if (sub1.length === 2) {
-        let max = sub1[0] > sub2[0] ? sub1[0] : sub2[0];
-        let min = sub1[1] < sub2[1] ? sub1[1] : sub2[1];
+        let max = sub1[0];
+        if (sub2[0] > max) {
+            max = sub2[0];
+        }
+        let min = sub1[1];
+        if (sub2[1] < min) {
+            min = sub2[1];
+        }
         return parseInt((min + max)/2);
     }
     let mid1 = parseInt((sub1.length - 1)/2);

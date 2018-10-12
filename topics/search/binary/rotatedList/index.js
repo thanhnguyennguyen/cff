@@ -1,6 +1,8 @@
 
 const find = (list, search, start = 0, end = -1) => {
-    end = end === -1 ? list.length - 1 : end;
+    if (end === -1) {
+        end = list.length - 1;
+    } 
     // put your code here to address problems
     if (start === end) {
         if (list[start] === search) {
