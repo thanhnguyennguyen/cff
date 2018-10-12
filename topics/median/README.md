@@ -7,7 +7,7 @@ https://www.geeksforgeeks.org/median-of-two-sorted-arrays/
 
 - m1: median of sub array1
 - m2: median of sub array2
-- if n === 1, return (arr1[0] + arr2[0])/2
+- if n === 2, return (max(arr1[0], arr2[0]) + min(arr1[1], arr2[1])) / 2 
 - if m1 === m2: return m1
 - else if m1 > m2:
     - median is in 2 ranges:
