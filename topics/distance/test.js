@@ -5,4 +5,5 @@ test('test distance', () => {
     expect(maxDistance([1])).toEqual(-1);
     expect(maxDistance([1, 5])).toEqual(4);
     expect(maxDistance([5, 2])).toEqual(-1);
+    expect(maxDistance([])).toEqual(-1);
 });
