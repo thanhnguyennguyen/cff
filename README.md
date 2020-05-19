@@ -11,6 +11,8 @@ demonstrating problem solving skill
 ## Testing: Please never write code without tests
 ### Install Jest
 <code>npm install -g jest</code>
+
+_Note_ : Jest requires Node version 10
 ### Run tests
 - Run test only <code>jest</code> or <code>npm test</code>
 - Run test with coverage <code>jest --coverage</code> or <code>npm run coverage</code>
