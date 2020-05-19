@@ -1,4 +1,4 @@
-const Stack = require('../stack-implementation/index');
+const Stack = require('../stack/index');
 
 class Queue1 {
     // put your code here to address problems
