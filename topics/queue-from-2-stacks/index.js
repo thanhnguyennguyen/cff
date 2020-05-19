@@ -1,5 +1,3 @@
-const Stack = require('../stack/index');
-
 class Queue1 {
     // put your code here to address problems
     constructor(stack1, stack2) {
