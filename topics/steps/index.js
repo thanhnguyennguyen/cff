@@ -1,4 +1,3 @@
-
 const getStepOutput = (step, total) => {
     return new Array(total + 1).join(' ').replace(
         new Array(step + 1).join(' '),
@@ -53,7 +52,7 @@ const steps4 = num => {
     let result = [];
     for (let row = 0; row < num; row++) {
         result.push(
-        new Array(row + 1 + 1).join('#') + new Array(num - row).join(' ')
+            new Array(row + 1 + 1).join('#') + new Array(num - row).join(' ')
         );
     }
     // row + 1: re-index row from 1 to num
@@ -62,4 +61,9 @@ const steps4 = num => {
     // similar for space, we should have [num - (row + 1) + 1] = (row -num) spaces
     return result;
 }
-module.exports = {steps, steps2, steps3, steps4};
+module.exports = {
+    steps,
+    steps2,
+    steps3,
+    steps4
+};

@@ -1,4 +1,6 @@
-const {Node, } = require('./index.js');
+const {
+    Node,
+} = require('./index.js');
 // put your tests here
 describe('Tree node: constructor test', () => {
     test('test constructor with number', () => {

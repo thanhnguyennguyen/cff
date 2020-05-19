@@ -1,5 +1,3 @@
-
-
 const capitalize = (str) => {
     // put your code here to address problems
     let result = [];
@@ -21,4 +19,7 @@ const capitalize2 = (str) => {
 }
 
 
-module.exports = {capitalize, capitalize2};
+module.exports = {
+    capitalize,
+    capitalize2
+};

@@ -1,4 +1,9 @@
-const {steps, steps2, steps3, steps4} = require('./index.js');
+const {
+    steps,
+    steps2,
+    steps3,
+    steps4
+} = require('./index.js');
 // put your tests here
 test('test steps: test some invalid inputs ', () => {
     expect(steps(-1)).toEqual([]);
@@ -47,4 +52,3 @@ test('test steps4: some valid inputs ', () => {
     expect(steps4(3)).toEqual(['#  ', '## ', '###']);
     expect(steps4(4)).toEqual(['#   ', '##  ', '### ', '####']);
 });
-

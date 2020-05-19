@@ -1,7 +1,7 @@
 const fizzString = "fizz";
 const buzzString = "buzz";
 let fizz = num => {
-    if (num % 3 === 0){
+    if (num % 3 === 0) {
         return fizzString;
     }
     return '';
@@ -12,4 +12,9 @@ let buzz = num => {
     }
     return '';
 }
-module.exports = {fizz, buzz, fizzString, buzzString};
+module.exports = {
+    fizz,
+    buzz,
+    fizzString,
+    buzzString
+};

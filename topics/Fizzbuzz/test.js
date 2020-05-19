@@ -1,4 +1,9 @@
-const {fizz, buzz, fizzString, buzzString} = require ('./index.js');
+const {
+    fizz,
+    buzz,
+    fizzString,
+    buzzString
+} = require('./index.js');
 // test fizz fucnction
 test('test fizz', () => {
     expect(fizz(3)).toEqual(fizzString);

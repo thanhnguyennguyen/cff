@@ -1,4 +1,7 @@
-const {palindrome, palindrome2} = require('./index.js');
+const {
+    palindrome,
+    palindrome2
+} = require('./index.js');
 
 test('test palindrome with empty', () => {
     expect(palindrome('')).toEqual(true);

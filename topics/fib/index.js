@@ -1,4 +1,3 @@
-
 const memoize = (fn) => {
     let cache = {};
     return (...args) => {

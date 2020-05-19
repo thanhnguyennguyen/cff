@@ -1,5 +1,4 @@
-
-const expiredPeriod = 30 *24 * 60 * 60 * 1000; // 30 days
+const expiredPeriod = 30 * 24 * 60 * 60 * 1000; // 30 days
 /**
  * 
  * @param {Array} data
@@ -12,10 +11,16 @@ const findActualActivationDate = (data) => {
     }
 
     let i = data.length - 1;
-    let result = {PHONE_NUMBER: data[i].phone, REAL_ACTIVATIONDATE: data[i].activation};
-    while(i > 0) {
-        if (new Date(data[i].activation) - new Date(data[i-1].deactivation) >= expiredPeriod) {
-    let result = {PHONE_NUMBER: data[i].phone, REAL_ACTIVATIONDATE: data[i].activation};
+    let result = {
+        PHONE_NUMBER: data[i].phone,
+        REAL_ACTIVATIONDATE: data[i].activation
+    };
+    while (i > 0) {
+        if (new Date(data[i].activation) - new Date(data[i - 1].deactivation) >= expiredPeriod) {
+            let result = {
+                PHONE_NUMBER: data[i].phone,
+                REAL_ACTIVATIONDATE: data[i].activation
+            };
             result.REAL_ACTIVATIONDATE = data[i].activation;
             return result;
         }
@@ -46,4 +51,7 @@ const validateData = (data) => {
 
 }
 
-module.exports = {findActualActivationDate, validateData};
+module.exports = {
+    findActualActivationDate,
+    validateData
+};

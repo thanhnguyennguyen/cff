@@ -1,4 +1,7 @@
-const {capitalize, capitalize2} = require('./index.js');
+const {
+    capitalize,
+    capitalize2
+} = require('./index.js');
 // put your tests here
 test('test capitalize: normal case', () => {
     expect(capitalize('nguyen thanh nguyen')).toEqual('Nguyen Thanh Nguyen');

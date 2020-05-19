@@ -1,4 +1,3 @@
-
 const vowels = str => {
     // put your code here to address problems
     let noVowelString = str.toLowerCase().replace(/[aeiou]/g, '');
@@ -7,7 +6,13 @@ const vowels = str => {
 
 const vowels2 = str => {
     // put your code here to address problems
-    const vowelCharacterMap = {'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1};
+    const vowelCharacterMap = {
+        'a': 1,
+        'e': 1,
+        'i': 1,
+        'o': 1,
+        'u': 1
+    };
     let result = 0;
     for (let c of str.toLowerCase()) {
         result += vowelCharacterMap[c] || 0;
@@ -15,5 +20,7 @@ const vowels2 = str => {
     return result;
 }
 
-module.exports = {vowels, vowels2};
-
+module.exports = {
+    vowels,
+    vowels2
+};

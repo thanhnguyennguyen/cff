@@ -1,7 +1,9 @@
-const {Linklist, } = require('./index.js');
+const {
+    Linklist,
+} = require('./index.js');
 // put your tests here]
 
-describe('Linklist: test remove at head', ()   =>  {
+describe('Linklist: test remove at head', () => {
     let linklist = new Linklist();
     linklist.insertAtHead(1);
     linklist.insertAtHead(2);
@@ -26,7 +28,7 @@ describe('Linklist: test remove at head', ()   =>  {
     });
 });
 
-describe('Linklist: test remove at tail', ()   =>  {
+describe('Linklist: test remove at tail', () => {
     let linklist = new Linklist();
     linklist.insertAtHead(1);
     linklist.insertAtHead(2);
@@ -52,11 +54,11 @@ describe('Linklist: test remove at tail', ()   =>  {
     });
 });
 
-describe('Linklist: test remove at a particular position', ()   =>  {
+describe('Linklist: test remove at a particular position', () => {
     let linklist1 = new Linklist(),
-    linklist2 = new Linklist(),
-    linklist3 = new Linklist(),
-    linklist4 = new Linklist();
+        linklist2 = new Linklist(),
+        linklist3 = new Linklist(),
+        linklist4 = new Linklist();
 
     linklist1.insertAtHead(1);
     linklist1.insertAtHead(2);
@@ -86,7 +88,7 @@ describe('Linklist: test remove at a particular position', ()   =>  {
         expect(linklist3.getSize()).toEqual(2);
     });
 
-    
+
     linklist4.insertAtHead(1);
     linklist4.insertAtHead(2);
     linklist4.insertAtHead(3);

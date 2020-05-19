@@ -1,4 +1,3 @@
-
 const maxDistance = (arr) => {
     // put your code here to address problems
     if (arr.length < 2) {
@@ -15,7 +14,7 @@ const maxDistance = (arr) => {
             min = arr[i];
             continue;
         }
-        let distance = (arr[i] - min) ;
+        let distance = (arr[i] - min);
         if (distance > maxDistanceValue) {
             maxDistanceValue = distance;
         }

@@ -1,4 +1,3 @@
-
 class Node {
     // put your code here to address problems
     constructor(data = null) {
@@ -20,9 +19,8 @@ class Node {
      */
     remove(data) {
         this.children = this.children.filter(e => {
-                return JSON.stringify(e.data) !== JSON.stringify(data)
-            }
-        );
+            return JSON.stringify(e.data) !== JSON.stringify(data)
+        });
     }
 }
 
@@ -37,7 +35,7 @@ class Tree {
      */
     BFS(fn) {
         let queue = [this.root];
-        while(queue.length) {
+        while (queue.length) {
             let node = queue.shift();
             queue.push(...node.children);
             fn(node);
@@ -50,7 +48,7 @@ class Tree {
      */
     DFS(fn) {
         let stack = [this.root];
-        while(stack.length) {
+        while (stack.length) {
             let node = stack.shift();
             stack.unshift(...node.children);
             fn(node);
@@ -58,4 +56,7 @@ class Tree {
     }
 }
 
-module.exports = {Node, Tree};
+module.exports = {
+    Node,
+    Tree
+};

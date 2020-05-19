@@ -1,11 +1,11 @@
-
 const chunk = (arr, size) => {
     // put your code here to address problems
-    let result = [], index = 0;
+    let result = [],
+        index = 0;
     if (size < 1 || size > arr.length) {
         return [arr];
     }
-    while(index < arr.length) {
+    while (index < arr.length) {
         result.push(arr.slice(index, index + size));
         index += size;
     }
@@ -37,4 +37,7 @@ const chunk2 = (arr, size) => {
     return result;
 }
 
-module.exports = { chunk, chunk2};
+module.exports = {
+    chunk,
+    chunk2
+};

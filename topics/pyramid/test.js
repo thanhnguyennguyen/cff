@@ -1,4 +1,7 @@
-const {pyramid, pyramid2} = require('./index.js');
+const {
+    pyramid,
+    pyramid2
+} = require('./index.js');
 // put your tests here
 test('test pyramid (Iteration solution): test some invalid inputs ', () => {
     expect(pyramid(-1)).toEqual([]);

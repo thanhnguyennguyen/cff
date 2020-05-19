@@ -1,9 +1,9 @@
-const binarySearch = (l,num, start, end) => {
+const binarySearch = (l, num, start, end) => {
     // return index of num, -1 if not found
     if (end < start) {
         return -1;
     }
-    let mid = parseInt((start + end)/2);
+    let mid = parseInt((start + end) / 2);
     if (l[mid] === num) {
         return mid;
     } else if (l[mid] > num) {
@@ -45,7 +45,7 @@ const findAllSubsets = (l, n, sum, start = 0) => {
         }
         if (n === 1) {
             let index = binarySearch(l, sum, start, end);
-            if (index !== -1 ) {
+            if (index !== -1) {
                 result.push([l[index]]);
             }
             return result;
@@ -53,10 +53,13 @@ const findAllSubsets = (l, n, sum, start = 0) => {
         let subsets = findAllSubsets(l, n - 1, sum - l[i], i + 1);
         subsets.forEach((set) => {
             set.unshift(l[i]);
-           result.push(set);
+            result.push(set);
         });
     }
     return result;
 }
 
-module.exports = {findOneSubset, findAllSubsets};
+module.exports = {
+    findOneSubset,
+    findAllSubsets
+};

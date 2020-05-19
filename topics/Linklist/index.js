@@ -1,8 +1,8 @@
 class Node {
     // put your code here to implement a link list node
 
-     // in Javascript, null means this variable has not been set
-     // null means this variable has been set to value null
+    // in Javascript, null means this variable has not been set
+    // null means this variable has been set to value null
     constructor(data, next = null) {
         this.data = data;
         this.next = next;
@@ -11,7 +11,7 @@ class Node {
 
 class Linklist {
     // put your code here to implement link list
-    
+
     /**
      * constructor
      * @param Node node optional
@@ -37,7 +37,7 @@ class Linklist {
             return null;
         }
         let walker = this.head;
-        while(walker.next) {
+        while (walker.next) {
             walker = walker.next;
         }
         return walker;
@@ -54,7 +54,7 @@ class Linklist {
         }
         let walker = this.head,
             i = 0;
-        while(i < index) {
+        while (i < index) {
             walker = walker.next;
             i++;
         }
@@ -154,7 +154,7 @@ class Linklist {
             return result;
         }
         let walker = this.head;
-        while(walker.next.next) {
+        while (walker.next.next) {
             walker = walker.next;
         }
         let result = walker.next.data;
@@ -194,7 +194,7 @@ class Linklist {
         if (this.size) {
             let walker = this.head,
                 result = [];
-            while(walker.next) {
+            while (walker.next) {
                 result.push(walker.data);
                 walker = walker.next;
             }
@@ -213,4 +213,7 @@ class Linklist {
     }
 }
 
-module.exports = {Linklist, Node};
+module.exports = {
+    Linklist,
+    Node
+};

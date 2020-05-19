@@ -1,4 +1,7 @@
-const {anagrams, anagrams2} = require('./index.js');
+const {
+    anagrams,
+    anagrams2
+} = require('./index.js');
 // put your tests here
 test('test anagrams', () => {
     expect(anagrams('nguyeN', 'nnuyeg')).toEqual(true);

@@ -11,5 +11,5 @@ test('Queue test', () => {
     expect(q.peek()).toEqual([3]);
     q.dequeue();
     expect(q.peek()).toEqual([]);
-    
+
 });

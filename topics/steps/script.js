@@ -1,4 +1,9 @@
-const {steps, steps2, steps3, steps4} = require('./index.js');
+const {
+    steps,
+    steps2,
+    steps3,
+    steps4
+} = require('./index.js');
 // put your execution script here
 const num = 5;
 console.log('Solution 1:');

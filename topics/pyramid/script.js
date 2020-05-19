@@ -1,4 +1,7 @@
-const {pyramid, pyramid2} = require('./index.js');
+const {
+    pyramid,
+    pyramid2
+} = require('./index.js');
 // put your execution script here
 const num = 7;
 console.log('Iteration solution')

@@ -6,16 +6,19 @@ const palindrome = (str) => {
     let reversed = '';
     for (let character of str) {
         reversed = character + reversed;
-    }  
+    }
     return (reversed === str);
 }
 
 // solution2 
 const palindrome2 = (str) => {
     return str.split('').every((char, index) => {
-        return char === str[str.length - 1 -index];
+        return char === str[str.length - 1 - index];
     });
 }
 
 
-module.exports = {palindrome, palindrome2};
+module.exports = {
+    palindrome,
+    palindrome2
+};

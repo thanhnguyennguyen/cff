@@ -1,7 +1,9 @@
-const {Linklist, } = require('./index.js');
+const {
+    Linklist,
+} = require('./index.js');
 // put your tests here]
 
-describe('Linklist: test insert at head', ()   =>  {
+describe('Linklist: test insert at head', () => {
     let linklist = new Linklist();
     test('test insert at head: empty link list', () => {
         linklist.insertAtHead(1);
@@ -18,9 +20,9 @@ describe('Linklist: test insert at head', ()   =>  {
     });
 });
 
-describe('Linklist: test insert at tail', ()   =>  {
+describe('Linklist: test insert at tail', () => {
     let linklist = new Linklist(),
-    linklist1 = new Linklist();
+        linklist1 = new Linklist();
     linklist.insertAtTail(1);
     test('test insert at tail: empty link list', () => {
         expect(linklist.getHead().data).toEqual(1);
@@ -36,10 +38,10 @@ describe('Linklist: test insert at tail', ()   =>  {
     });
 });
 
-describe('Linklist: test insert at a particular position', ()   =>  {
+describe('Linklist: test insert at a particular position', () => {
     let linklist1 = new Linklist(),
-    linklist2 = new Linklist(),
-    linklist3 = new Linklist();
+        linklist2 = new Linklist(),
+        linklist3 = new Linklist();
 
     test('test insert at position 0 (head)', () => {
         expect(linklist1.insertAt(0, 1)).toEqual(true);
@@ -55,7 +57,7 @@ describe('Linklist: test insert at a particular position', ()   =>  {
     });
 
     test('test insert at invalid position', () => {
-        
+
         expect(linklist3.insertAt(0, 1)).toEqual(true);
         expect(linklist2.insertAt(3, 2)).toEqual(false);
         expect(linklist3.insertAt(1, 2)).toEqual(true)
@@ -64,4 +66,3 @@ describe('Linklist: test insert at a particular position', ()   =>  {
         expect(linklist3.getSize()).toEqual(3);
     });
 });
-

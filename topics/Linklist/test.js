@@ -1,9 +1,11 @@
-const {Linklist, } = require('./index.js');
+const {
+    Linklist,
+} = require('./index.js');
 // put your tests here
 
-describe('Linklist: test getHead', ()   =>  {
+describe('Linklist: test getHead', () => {
     let linklist = new Linklist(),
-    emptylist = new Linklist()
+        emptylist = new Linklist()
 
     test('empty list', () => {
         expect(emptylist.getHead()).toEqual(null);
@@ -19,9 +21,9 @@ describe('Linklist: test getHead', ()   =>  {
 });
 
 
-describe('Linklist: test getTail', ()   =>  {
+describe('Linklist: test getTail', () => {
     let linklist = new Linklist(),
-    emptylist = new Linklist();
+        emptylist = new Linklist();
 
     test('empty list', () => {
         expect(emptylist.getTail()).toEqual(null);
@@ -36,9 +38,9 @@ describe('Linklist: test getTail', ()   =>  {
     });
 });
 
-describe('Linklist: test getElementAt', ()   =>  {
+describe('Linklist: test getElementAt', () => {
     let linklist = new Linklist(),
-    emptylist = new Linklist();
+        emptylist = new Linklist();
 
     test('empty list', () => {
         expect(emptylist.getElementAt(0)).toEqual(null);
@@ -51,7 +53,7 @@ describe('Linklist: test getElementAt', ()   =>  {
     test('invalid index', () => {
         expect(linklist.getElementAt(5)).toEqual(null);
     });
-    
+
     test('valid index', () => {
         expect(linklist.getElementAt(1).data).toEqual(2);
     });
