@@ -1,8 +1,8 @@
 # Code For Fun / Code For Food
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thanhnguyennguyen/cff/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thanhnguyennguyen/cff/?branch=master)
 [![Build Status](https://travis-ci.com/thanhnguyennguyen/cff.svg?branch=master)](https://travis-ci.com/thanhnguyennguyen/cff)
-[![codecov](https://codecov.io/gh/thanhnguyennguyen/cff/branch/master/graph/badge.svg)](https://codecov.io/gh/thanhnguyennguyen/cff)
-# [![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/thanhnguyennguyen/cff/)
+[![codecov](https://codecov.io/gh/thanhnguyennguyen/cff/branch/master/graph/badge.svg)](https://codecov.io/gh/thanhnguyennguyen/cff)[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nguyennguyen/hacker)](https://cloud.docker.com/repository/docker/nguyennguyen/hacker/general)
+
 demonstrating problem solving skill
 
 ## Start solving a new problem
