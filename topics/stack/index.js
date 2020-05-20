@@ -12,6 +12,9 @@ class Stack {
     top() {
         return this.data[this.data.length - 1];
     }
+    isEmpty() {
+        return this.data.length === 0
+    }
 }
 
 module.exports = Stack;

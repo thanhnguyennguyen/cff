@@ -2,7 +2,7 @@ const {
     Queue1,
     Queue2
 } = require('./index.js');
-const Stack = require('../stack-implementation/index');
+const Stack = require('../stack/index');
 // put your tests here
 test('test queue-from-2-stacks: pushing works on enqueue', () => {
     let stack1 = new Stack(),
