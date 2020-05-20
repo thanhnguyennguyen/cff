@@ -1,5 +1,5 @@
 {
-  "name": "hacker",
+  "name": "cff",
   "version": "1.0.0",
   "description": "The code interview bootcamp: Algorithms + Datastructures",
   "main": "no",
@@ -19,20 +19,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thanhnguyennguyen/hacker.git"
+    "url": "git+https://github.com/thanhnguyennguyen/cff.git"
   },
   "keywords": [
     "code",
     "interview",
     "nguyennguyen",
-    "hacker"
+    "cff"
   ],
   "author": "NguyenNguyen (nguyenbk92@gmail.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thanhnguyennguyen/hacker/issues"
+    "url": "https://github.com/thanhnguyennguyen/cff/issues"
   },
-  "homepage": "https://github.com/thanhnguyennguyen/hacker#readme",
+  "homepage": "https://github.com/thanhnguyennguyen/cff#readme",
   "dependencies": {
     "fast-csv": "^2.4.1",
     "mongodb": "^3.1.4"
