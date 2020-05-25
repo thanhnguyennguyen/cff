@@ -6,7 +6,6 @@ const operators = {
     "/": true,
 }
 const PostfixToPrefix = (formula) => {
-    let result = ""
     let stack = new Stack()
     for (let i = 0; i < formula.length; i++) {
         let c = formula[i]
@@ -23,3 +22,4 @@ const PostfixToPrefix = (formula) => {
     return stack.pop()
 }
 module.exports = PostfixToPrefix
+
