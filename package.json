@@ -35,6 +35,6 @@
   "homepage": "https://github.com/thanhnguyennguyen/cff#readme",
   "dependencies": {
     "fast-csv": "^2.4.1",
-    "mongodb": "^3.1.4"
+    "mongodb": "^3.1.13"
   }
 }
