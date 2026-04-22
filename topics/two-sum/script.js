@@ -1,2 +1,2 @@
-const two_sum = require('./index.js');
+// const two_sum = require('./index.js');
 // put your execution script here
