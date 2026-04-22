@@ -13,6 +13,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:topic": "node ./scripts/test-topic.js",
     "coverage": "jest --coverage",
     "solve-problem": "sh init.sh ",
     "finish": "sh finish.sh "
