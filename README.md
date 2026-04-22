@@ -1,6 +1,6 @@
 # Code For Fun / Code For Food
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thanhnguyennguyen/cff/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thanhnguyennguyen/cff/?branch=master)
-[![Build Status](https://travis-ci.com/thanhnguyennguyen/cff.svg?branch=master)](https://travis-ci.com/thanhnguyennguyen/cff)
+[![CI](https://github.com/thanhnguyennguyen/cff/actions/workflows/ci.yml/badge.svg)](https://github.com/thanhnguyennguyen/cff/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/thanhnguyennguyen/cff/branch/master/graph/badge.svg)](https://codecov.io/gh/thanhnguyennguyen/cff)[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nguyennguyen/hacker)](https://cloud.docker.com/repository/docker/nguyennguyen/hacker/general)
 
 demonstrating problem solving skill
