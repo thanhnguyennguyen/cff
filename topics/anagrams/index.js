@@ -14,11 +14,6 @@ const buildCharacterMap = (str) => {
 const anagrams = (strA, strB) => {
     // put your code here to address problems
 
-    
-    // lowercase and remove special character
-    strA = preProcess(strA)
-    strB = preProcess(strB);
-
     // check length first to avoid wasting time
     if (strA.length !== strB.length) {
         return false;
@@ -40,7 +35,23 @@ const anagrams = (strA, strB) => {
 }
 
 const anagrams2 = (strA, strB) => {
-    return (preProcess(strA).split('').sort().join('') === preProcess(strB).split('').sort().join(''))
+    if (strA.length !== strB.length) {
+        return false;
+    }
+    let appearanceMap = {};
+    for (let char of strA) {
+        appearanceMap[char] = ++appearanceMap[char] || 1;
+    }
+    for (let char of strB) {
+        if (!appearanceMap[char]) {
+            return false;
+        }
+        appearanceMap[char]--;
+        if (appearanceMap[char] === 0) {
+            delete appearanceMap[char];
+        }
+    }
+    return true;
 }
 
 module.exports = {anagrams, anagrams2};

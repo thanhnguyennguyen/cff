@@ -30,6 +30,9 @@ const jestArgs = ["topics/" + topic];
 const extra = process.argv.slice(3); // allow: npm run test:topic two-sum -- --watch
 if (extra.length) jestArgs.push(...extra);
 
-const res = spawnSync("npx", ["jest", ...jestArgs], { stdio: "inherit" });
+const jestBin = require.resolve("jest/bin/jest");
+const res = spawnSync(process.execPath, [jestBin, ...jestArgs], {
+  stdio: "inherit",
+});
 process.exit(res.status ?? 1);
 
