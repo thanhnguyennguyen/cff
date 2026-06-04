@@ -5,7 +5,10 @@
   "main": "no",
   "jest": {
     "collectCoverageFrom": [
-      "topics/*"
+      "topics/**/*.js",
+      "!topics/**/*.test.js",
+      "!topics/**/tests/**",
+      "!topics/**/script.js"
     ],
     "testPathIgnorePatterns": [
       "template/*"
